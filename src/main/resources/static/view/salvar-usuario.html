@@ -1,0 +1,39 @@
+<div>
+	<h2>Cadastro - Usuario</h2>
+	<form novalidate name="frmUsuario">
+		<div>
+			<input type="text" ng-minlength="3" name="txtLogin"
+				ng-model="usuario.login" required /> <span
+				ng-show="frmUsuario.txtLogin.$error.required && frmUsuario.txtLogin.$dirty">Campo
+				Login Obrigatório</span>
+		</div>
+
+		<div>
+			<input type="password" ng-minlength="8" name="txtSenha"
+				ng-model="usuario.senha" required /> <span
+				ng-show="frmUsuario.txtSenha.$error.required && frmUsuario.txtSenha.$dirty">Campo
+				Senha Obrigatório</span>
+		</div>
+
+			<input type="radio" name="perfil" value="1" ng-model="aux.idPerfil">Prestador de Serviço<br>
+			<input type="radio" name="perfil" value="2" ng-model="aux.idPerfil">Contratante<br>
+
+
+		<input type="button" value="Salvar" ng-click="salvarUsuario()" /> <input
+			type="button" value="Cancelar" ng-click="cancelarAlteracao()"
+			ng-disabled="frmUsuario.$invalid" />
+
+		<div>
+			<fieldset>
+				<legend> Formulário </legend>
+				Valido: {{frmUsuario.$valid}}
+			</fieldset>
+
+			<fieldset>
+				<legend> Nome </legend>
+				Valido: {{frmUsuario.txtLogin.$valid}}
+			</fieldset>
+		</div>
+	</form>
+<a href="/Menu">Voltar</a>
+</div>

@@ -1,0 +1,47 @@
+<div>
+	<h2>Busca - Solicitacao usuario</h2>
+	<form novalidate name="frmSolicitacao">
+
+		<div ng-repeat="soli in solicitacoes">
+			<fieldset>
+				<legend> Solicitacao </legend>
+				<br/>
+				<div>
+					<label>Nome: {{soli.nome}}</label>
+				</div>
+				<div>
+					<label>Data: {{soli.data}}</label>
+				</div>
+				<br/>
+				<div>
+					<label>Tamanho da casa em m²: {{soli.tamanhoCasa}}</label>
+				</div>
+				<div>
+					<label>Nº de comodos: {{soli.nComodos}}</label>
+				</div>
+				<div>
+					<label>Distancia em KM: {{soli.distancia}}</label>
+				</div>
+				<div>
+					<label>Data: {{soli.data}}</label>
+				</div>
+				<br/>
+				<div>
+					<input type="radio" name="diaria" value="1" ng-model="soli.manhaOuTardeDiaria">Diaria<br>
+					<input type="radio" name="parcialManha" value="2" ng-model="soli.manhaOuTardeDiaria">Parcial manha<br>
+					<input type="radio" name="parcialNoite" value="3" ng-model="soli.manhaOuTardeDiaria">Parcial noite<br>
+				</div>
+				<div>
+					<input type="button" value="Aceitar" ng-click="aceitarSolicitacaoServico(soli.id)" />
+				</div>
+			</fieldset>
+		</div>
+
+
+		
+		<br/>
+
+	</form>
+	<a href="/Menu">Voltar</a>
+
+</div>

@@ -1,0 +1,17 @@
+Perfil: 1 - Prestador, 2 - Solicitante, 3 - Adm
+
+DadosPessoais - ruaOuAv: 1 - Rua, 2 - Avenida
+
+UsuarioServico - diariaOuMeia: 1 - Diaria, 2 - Meia
+
+SolicitacaoServico - status: 1 - Solicitado, 2 - Aprovado, 3 - Reprovado
+
+Agenda - manhaOuTardeDiaria: 1 - Manha, 2 - Tarde, 3 - Diaria
+
+Agenda - status: 1 - Marcada, 2 - Terminada
+
+
+
+
+insert into perfil(perfil) values('prestador');
+insert into perfil(perfil) values('solicitante');

@@ -1,0 +1,64 @@
+<div>
+	<h2>Busca - Usuario Prestador</h2>
+	<form novalidate name="frmPerfil">
+		
+		<br/>
+
+		 <label>Nome: {{dadosPessoais.nome}}</label>
+		 <br/>
+		 <span ng-show="mostraImagem">
+		 	<label>Foto: </label>
+		 	<br/>
+		 	<img src="{{dadosPessoais.url}}" style="width:150px;height:100px;"/>
+		 </span>
+		
+
+		<br />
+		<div>
+			<h3>Serviços</h3>
+			<div ng-repeat="servicoList in servicos">
+				<br />
+				<div>
+					<label>{{servicoList}} </label> <label> Sim</label>
+				</div>
+
+			</div>
+			<label>Valor diaria: {{valorDiaria}}</label>
+			<label>Valor Meia: {{valorMeia}}</label>
+		</div>
+
+		<div>
+			<h3>Agenda</h3>
+			<div ng-repeat="dia in dias">
+
+				<label>{{dia.dia}}</label>
+				<button  value="{{dia.dia}}" ng-model="aux.diaEscolha" ng-click="abreOpcoes(dia.dia)" >Opcoes</button> 
+				    <span ng-show="{{dia.dia}} == aux.diaEscolha"><br/>
+						<input type="radio" name="diaria" value="1" ng-model="agenda.manhaOuTardeDiaria">Diaria<br>
+						<input type="radio" name="parcialManha" value="2" ng-model="agenda.manhaOuTardeDiaria">Parcial manha<br> 
+						<input type="radio" name="parcialNoite" value="3" ng-model="agenda.manhaOuTardeDiaria">Parcial noite<br>
+						<button ng-click="cadastrarSolicitacao(dia.dia)">Solicitar Servico</button> 
+				</span>
+			</div>
+			<div>
+				<h3>Avaliacoes</h3>
+				<div ng-repeat="avaliacao in avaliacoes"></div>
+			</div>
+
+			</div>
+
+			<br />
+			<div>
+				<fieldset>
+					<legend> Formulário </legend>
+					Valido: {{mostraOpcoes}}
+				</fieldset>
+
+				<fieldset>
+					<legend> Nome </legend>
+					Valido: {{frmUsuario.txtLogin.$valid}}
+				</fieldset>
+			</div>
+	</form>
+	<a href="/Menu">Voltar</a>
+</div>

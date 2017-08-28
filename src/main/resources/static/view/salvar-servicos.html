@@ -1,0 +1,54 @@
+<div>
+	<h2>Cadastro - Servicos</h2>
+	<form novalidate name="frmServicos">
+		
+	
+		<input type="radio" name="faxina" value="1" ng-model="servico.diariaOuMeia">Diaria Completa<br>
+		<input type="radio" name="faxina" value="2" ng-model="servico.diariaOuMeia">Meio periodo<br>
+
+		<div>
+			<label>R$: </label> 
+			<input type="number"  name="txtValor"
+				ng-model="servico.valor" required /> <span
+				ng-show="frmServicos.txtValor.$error.required && frmServicos.txtValor.$dirty">Campo
+				Valor Obrigatório</span>
+		</div>
+		
+		<input type="checkbox" ng-checked="aux.varrerOuAspirarCh" ng-click="ivertValor('varrerOuAspirar')"  name="varrerOuAspirar" value="varrerOuAspirar" ng-model="aux.varrerOuAspirar">VARRER OU ASPIRAR<br>
+		<input type="checkbox" ng-checked="aux.limparJanelaCh" ng-click="ivertValor('limparJanela')" name="limparJanela" value="limparJanela" ng-model="aux.limparJanela">LIMPAR JANELAS
+		<input type="checkbox" ng-checked="aux.arrumarCamaCh"  ng-click="ivertValor('arrumarCama')" name="arrumarCama" value="arrumarCama" ng-model="aux.arrumarCama">ARRUMAR CAMA
+		
+
+		<input type="button" value="Salvar" ng-click="salvarServico()" /> <input
+			type="button" value="Cancelar" ng-click="cancelarAlteracao()"
+			ng-disabled="frmServicos.$invalid" />
+
+		<div>
+			<fieldset>
+				<legend> Formulário </legend>
+				Valido: {{frmServicos.$valid}}
+			</fieldset>
+
+			<fieldset>
+				<legend> varrerOuAspirar </legend>
+				Valido: {{frmServicos.varrerOuAspirar.$dirty}}
+			</fieldset>
+			
+			<fieldset>
+				<legend> limparJanela </legend>
+				Valido: {{frmServicos.limparJanela.$dirty}}
+			</fieldset>
+			
+			<fieldset>
+				<legend> arrumarCama </legend>
+				Valido: {{frmServicos.arrumarCama.$dirty}}
+			</fieldset>
+			<fieldset>
+				<legend> Primeiro chekbox </legend>
+				Valido: {{aux.varrerOuAspirarCh}}
+			</fieldset>
+			
+		</div>
+	</form>
+<a href="/Menu">Voltar</a>
+</div>

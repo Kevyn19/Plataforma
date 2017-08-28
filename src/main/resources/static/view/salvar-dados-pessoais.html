@@ -1,0 +1,95 @@
+<div>
+	<h2>Cadastro - Dados Pessoais</h2>
+	<form novalidate name="frmDadosPessoais">
+		<div>
+			<label>Nome: </label> <input type="text" ng-maxlength="25" size=25
+				name="txtNome" ng-model="dadosPessoais.nome" required /> <span
+				ng-show="frmDadosPessoais.txtNome.$error.required && frmDadosPessoais.txtNome.$dirty">Campo
+				Nome é Obrigatório</span> <label>Email: </label> <input type="email"
+				name="txtEmail" ng-model="dadosPessoais.email" required /> <span
+				ng-show="frmDadosPessoais.txtEmail.$error.required && frmDadosPessoais.txtEmail.$dirty">Campo
+				Email Obrigatório</span> <span
+				ng-show="frmDadosPessoais.txtEmail.$error.email">E-mail
+				invalido</span>
+
+		</div>
+		<div>
+			<label>CPF: </label> <input type="text" ng-maxlength="11" size=11
+				name="txtCPF" ng-model="dadosPessoais.cpf" required /> <span
+				ng-show="frmDadosPessoais.txtCPF.$error.required && frmDadosPessoais.txtCPF.$dirty">Campo
+				CPF Obrigatório</span> <label>Cel: </label> <input type="text"
+				ng-maxlength="9" size=9 name="txtCel" ng-model="dadosPessoais.cel"
+				required /> <span
+				ng-show="frmDadosPessoais.txtCel.$error.required && frmDadosPessoais.txtCel.$dirty">Campo
+				Cel Obrigatório</span>
+
+		</div>
+		<div>
+			<input type="radio" name="ruaOuAv" value="1" ng-model="aux.prefix">Rua<br>
+			<input type="radio" name="ruaOuAv" value="2" ng-model="aux.prefix">Avenida<br>
+		</div>
+
+
+		<div>
+			<label>Rua ou Av: </label> <input type="text" ng-maxlength="25"
+				size=25 name="txtRuaOuAv" ng-model="dadosPessoais.ruaOuAv" required />
+			<span
+				ng-show="frmDadosPessoais.txtRuaOuAv.$error.required && frmDadosPessoais.txtRuaOuAv.$dirty">Campo
+				Obrigatório</span>
+	
+			<label>Bairro: </label> <input type="text" name="txtBairro" size=25
+				ng-model="dadosPessoais.bairro" required /> <span
+				ng-show="frmDadosPessoais.txtBairro.$error.required && frmDadosPessoais.txtBairro.$dirty">Campo
+				Bairro Obrigatório</span>
+		</div>
+
+		<div>
+			<label>Nº: </label> <input type="number" ng-maxlength="5" size=5
+				name="txtNumero" ng-model="dadosPessoais.numero" required /> <span
+				ng-show="frmDadosPessoais.txtNumero.$error.required && frmDadosPessoais.txtNumero.$dirty">Campo
+				Numero Obrigatório</span>
+	
+			<label>Cidade: </label> <input type="text" name="txtCidade" size=25
+				ng-model="dadosPessoais.cidade" required /> <span
+				ng-show="frmDadosPessoais.txtCidade.$error.required && frmDadosPessoais.txtCidade.$dirty">Campo
+				Senha Obrigatório</span>
+		
+			<label>UF: </label> <input type="text" ng-maxlength="2" size=1
+				name="txtUF" ng-model="dadosPessoais.uf" required /> <span
+				ng-show="frmDadosPessoais.txtUF.$error.required && frmDadosPessoais.txtUF.$dirty">Campo
+				UF Obrigatório</span>
+		</div>
+		
+		
+
+		<input type="button" value="Salvar" ng-click="salvarDadosPessoais()" />
+		<input type="button" value="Cancelar" ng-click="cancelarAlteracao()"
+			ng-disabled="frmDadosPessoais.$invalid" />
+			
+		<br/>
+		
+		
+		<span ng-show="upload">
+
+		   <input class="form-control" type="file" file-model = "uploadedFile" placeholder="Upload File"></input>
+		    <button type="submit" class="btn btn-default" ng-click = "doUploadFile()">Upload</button>
+		    <span ng-show="temFoto()">
+				<img src="{{aux.url}}" style="width:150px;height:100px;"/>
+			</span>
+		</span>
+				
+
+		<div>
+			<fieldset>
+				<legend> Formulário </legend>
+				Valido: {{frmDadosPessoais.$valid}}
+			</fieldset>
+
+			<fieldset>
+				<legend> Nome </legend>
+				Valido: {{frmDadosPessoais.txtLogin.$valid}}
+			</fieldset>
+		</div>
+	</form>
+<a href="/Menu">Voltar</a>
+</div>

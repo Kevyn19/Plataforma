@@ -1,0 +1,41 @@
+<div>
+	<h2>Busca - Usuario</h2>
+	<form novalidate name="frmUsuarioGeo">
+
+		<div>
+			<label>Distancia: </label> <input type="number" name="txtDistancia"
+				ng-model="distancia" required /> <span
+				ng-show="frmUsuarioGeo.txtDistancia.$error.required && frmUsuarioGeo.txtDistancia.$dirty">Campo
+				Valor Obrigatório</span>
+				
+			<label>Valor Maximo: </label> <input type="number" name="txtValor"
+				ng-model="valor" required /> <span
+				ng-show="frmUsuarioGeo.txtValor.$error.required && frmUsuarioGeo.txtValor.$dirty">Campo
+				Valor Obrigatório</span>
+		</div>
+
+		
+		<input type="button" value="Buscar" ng-click="buscarUsuario()" />
+		<br/>
+		
+
+		<div ng-repeat="user in usuarios">
+			<br/>
+			<div>
+				<label>Nome: {{user.nome}}</label>
+			</div>
+			<div>
+				<label>Distancia: {{user.distancia}}</label>
+				<a href="perfil/{{user.id}}/{{user.distancia}}">Perfil</a>
+			</div>
+
+		</div>
+
+
+		
+		<br/>
+
+	</form>
+	<a href="/Menu">Voltar</a>
+
+</div>

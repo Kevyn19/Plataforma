@@ -1,0 +1,40 @@
+<div>
+			<input type="button" value="Logout" ng-click="logout()" />
+			<fieldset >
+				<legend> Perfil -  Geral </legend>
+				
+				
+				<a href="/Cadastro/dadosPessoais">Cadastro - dados pessoais</a>
+			</fieldset>
+			<br/> 
+			<fieldset>
+				<legend> Perfil -  Prestador </legend>
+				
+				<a href="/Cadastro/servicos">Cadastro - lista seviços prestados</a>
+				
+				<a href="/Buscar/Servico/Prestador">Solicitacoes recebidas {{total}}</a>
+			
+			</fieldset>
+			<br/> 
+			<fieldset>
+			<legend> Perfil -  Solicitante </legend>
+			
+				<a href="/Cadastro/localServico">Cadastro - Dados local do serviço</a>
+				
+				<a href="/Buscar/Usuario/Prestador">Busca - usuario prestador por Geolocalizacao</a>
+			
+			</fieldset>
+
+
+<br/> 
+<br/>
+
+
+
+<br />
+Rota: {{$location.path()}}
+<br/>
+Perfil{{perfil}}
+
+
+</div>

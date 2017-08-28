@@ -1,0 +1,39 @@
+<div>
+	<h2>Cadastro - Dados local Servico</h2>
+	<form novalidate name="frmLocalServico">
+		<div>
+			<label>Tamanho da casa (m²): </label> 
+			<input type="number"  name="numTamanhoCasa"
+				ng-model="localServico.tamanhoCasa" required /> <span
+				ng-show="frmLocalServico.numTamanhoCasa.$error.required && frmLocalServico.numTamanhoCasa.$dirty">Campo
+				Tamanho da casa Obrigatório</span>
+		</div>
+
+		<div>
+			<label>numero de comodos: </label>
+			<input type="number" name="numNComodos"
+				ng-model="localServico.nComodos" required /> <span
+				ng-show="frmLocalServico.numNComodos.$error.required && frmLocalServico.numNComodos.$dirty">Campo
+				numero de comodos Obrigatório</span>
+		</div>
+
+
+
+		<input type="button" value="Salvar" ng-click="salvarLocalServico()" /> <input
+			type="button" value="Cancelar" ng-click="cancelarAlteracao()"
+			ng-disabled="frmLocalServico.$invalid" />
+
+		<div>
+			<fieldset>
+				<legend> Formulário </legend>
+				Valido: {{frmLocalServico.$valid}}
+			</fieldset>
+
+			<fieldset>
+				<legend> Nome </legend>
+				Valido: {{frmLocalServico.txtLogin.$valid}}
+			</fieldset>
+		</div>
+	</form>
+<a href="/Menu">Voltar</a>
+</div>
